@@ -1,80 +1,77 @@
+
 import java.io.*;
-public class P5_03{
-  static final int xMod=3;
-  public static void main(String[]args)throws IOException{
 
-    int x,y,z;
-    float nz;
-  BufferedReader stdin=new BufferedReader(new InputStreamReader(System.in));
+public class P5_03 {
 
-  InputStreamReader serge=new InputStreamReader(System.in);
-  BufferedReader mme =new BufferedReader(serge);
+    static final int xMod = 3;
 
-  System.out.println("Hello");
-  System.out.println("Escribe El Nombre de 10 Alumnos y su Calificacion correspondiente: ");
+    public static void main(String[] args) throws IOException {
 
-  int[]eDIO =new int[xMod];
-  double[]dbeDIO =new double[eDIO.length];
-  String[]eNAME =new String[xMod];
+        int x, y, z;
+        float nz;
+        BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 
-String nameAL;
-double valor;
-String lineaTeclado;
+        InputStreamReader serge = new InputStreamReader(System.in);
+        BufferedReader mme = new BufferedReader(serge);
 
-  for (int i=0,j=1;i<xMod ;++i,++j ) {
-    System.out.println("\nFull Name: <" + j + ">");
+        System.out.println("Hello");
+        System.out.println("Escribe El Nombre de 10 Alumnos y su Calificacion correspondiente: ");
 
-    nameAL=stdin.readLine();
+        int[] eDIO = new int[xMod];
+        double[] dbeDIO = new double[eDIO.length];
+        String[] eNAME = new String[xMod];
 
-    do{
-      System.out.println("Calificacion (valores del 0-10) : <" + j + ">");
-      lineaTeclado = mme.readLine();
-      valor = Double.parseDouble(lineaTeclado);
-      if(valor<0||valor>10){
-        System.out.println("Calificacion no Valida, trt again!");
+        String nameAL;
+        double valor;
+        String lineaTeclado;
 
-      }
-    }while(valor<0||valor>10);
+        for (int i = 0, j = 1; i < xMod; ++i, ++j) {
+            System.out.println("\nFull Name: <" + j + ">");
 
-    dbeDIO[i]=valor;
-    eNAME[i]=nameAL;
-  }
+            nameAL = stdin.readLine();
 
-  String[]alFIN =new String[xMod];
-  String[]alFIN2 =new String[xMod];
-  //
-  //();
-  for (int i=0;i<xMod ;++i ) {
-    //String teampREG=eNAME[i].concat(", Calif. ["+String.valueOf(dbeDIO[i]));
+            do {
+                System.out.println("Calificacion (valores del 0-10) : <" + j + ">");
+                lineaTeclado = mme.readLine();
+                valor = Double.parseDouble(lineaTeclado);
+                if (valor < 0 || valor > 10) {
+                    System.out.println("Calificacion no Valida, trt again!");
 
-//    System.out.println(dbeDIO[i]+eNAME[i]);
-    if(dbeDIO[i]>=0&&dbeDIO[i]<5){
+                }
+            } while (valor < 0 || valor > 10);
 
+            dbeDIO[i] = valor;
+            eNAME[i] = nameAL;
+        }
 
-    alFIN2[i]=eNAME[i].concat(", Calif. ["+String.valueOf(dbeDIO[i]).concat("], Reprobado."));
+        String[] alFIN = new String[xMod];
+        String[] alFIN2 = new String[xMod];
+        //
+        //();
+        for (int i = 0; i < xMod; ++i) {
 
-}else if(dbeDIO[i]>=5&&dbeDIO[i]<7){
-  alFIN2[i]=eNAME[i].concat(", Calif. ["+String.valueOf(dbeDIO[i]).concat("], Bien."));
+            if (dbeDIO[i] >= 0 && dbeDIO[i] < 5) {
+                alFIN2[i] = eNAME[i].concat(", Calif. [" + String.valueOf(dbeDIO[i]).concat("], Reprobado."));
 
-}else if(dbeDIO[i]>=7&&dbeDIO[i]<9){
-  alFIN2[i]=eNAME[i].concat(", Calif. ["+String.valueOf(dbeDIO[i]).concat("], Notable."));
+            } else if (dbeDIO[i] >= 5 && dbeDIO[i] < 7) {
+                alFIN2[i] = eNAME[i].concat(", Calif. [" + String.valueOf(dbeDIO[i]).concat("], Bien."));
 
-}else if(dbeDIO[i]>=9&&dbeDIO[i]<=10){
-  alFIN2[i]=eNAME[i].concat(", Calif. ["+String.valueOf(dbeDIO[i]).concat("], Sobresaliente!!."));
-  //System.out.println(alFIN2[i]);
-}
+            } else if (dbeDIO[i] >= 7 && dbeDIO[i] < 9) {
+                alFIN2[i] = eNAME[i].concat(", Calif. [" + String.valueOf(dbeDIO[i]).concat("], Notable."));
 
-System.out.println("\nlas Calificaciones son: \n");
+            } else if (dbeDIO[i] >= 9 && dbeDIO[i] <= 10) {
+                alFIN2[i] = eNAME[i].concat(", Calif. [" + String.valueOf(dbeDIO[i]).concat("], Sobresaliente!!."));
+            }
 
-  }
-  for (int k=0;k<xMod ;++k ) {
-      System.out.println(alFIN2[k]);
-    //  System.out.println(alFIN[i]);
+            System.out.println("\nlas Calificaciones son: \n");
 
-  }
-  System.out.println("\n ----------------------- \n");
+        }
+        for (int k = 0; k < xMod; ++k) {
+            System.out.println(alFIN2[k]);
 
+        }
+        System.out.println("\n ----------------------- \n");
 
-  }
+    }
 
 }

@@ -23,13 +23,11 @@ public class P5_01 {
 
             if (opE % 2 == 0) {
                 System.out.println("Debe ser un Numero par please");
-
             } else {
-                System.out.println("Correcto, Escribe " + opE + " valore a continuacion\n");
-
+                System.out.println("Correcto, Escribe " + opE + " valores a continuacion\n");
             }
-
         } while (x == 0);
+
         int[] eDIO = new int[y];
 
         for (int j = 0; j < y; ++j) {
@@ -38,28 +36,27 @@ public class P5_01 {
             int valor = Integer.parseInt(lineaTeclado);
 
             eDIO[j] = valor;
-
         }
+        //      z = (y / 2) + 1;
+        int zBYE = eDIO.length / 2;
+        int pri_1, pri_2, tempAX = 0;
 
-        z = (y / 2) + 1;
-
-        int f1 = 0;
-        int xCount, yCount, tempAX = 0;
-
-        for (xCount = y; xCount > 0 && f1 == 0; xCount--) {
-            f1 = 1;
-            for (yCount = 0; yCount < xCount; yCount++) {
-                if (eDIO[yCount] > eDIO[xCount + 1]) {
-                    tempAX = eDIO[yCount];
+        for (pri_1 = 0; pri_1 < eDIO.length; pri_1++) {
+            for (pri_2 = pri_1 + 1; pri_2 < eDIO.length; pri_2++) {
+                if (eDIO[pri_1] < eDIO[pri_2]) {
+                    tempAX = eDIO[pri_1];
+                    eDIO[pri_1] = eDIO[pri_2];
+                    eDIO[pri_2] = tempAX;
                 }
-                eDIO[yCount] = eDIO[xCount + 1];
-                eDIO[yCount + 1] = tempAX;
-                f1 = 0;
-
             }
         }
+        System.out.println("---> " + eDIO.length + " Numeros Ordenados de mayor a menor \n");
 
-        System.out.println("La mediana es: -> " + eDIO[z]);
+        for (int k = 0; k < eDIO.length; k++) {
+            System.out.println(k + "-> " + eDIO[k]);
+
+        }
+        System.out.println("La mediana es: -> " + eDIO[zBYE]);
     }
 
 }
