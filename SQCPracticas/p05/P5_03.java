@@ -3,7 +3,7 @@ import java.io.*;
 
 public class P5_03 {
 
-    static final int xMod = 3;
+    static final int xMod = 10;
 
     public static void main(String[] args) throws IOException {
 
