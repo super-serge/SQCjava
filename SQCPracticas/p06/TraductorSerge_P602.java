@@ -4,7 +4,7 @@ public class TraductorSerge_P602{
 
   static final int maxWORDS = 100;
 
-  public void crearDiccionario(String comparaCAD) throws IOException{
+  public void crearDiccionario() throws IOException{
     String[] englishW = new String[maxWORDS];
     String[] spanishW = new String[maxWORDS];
     BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
@@ -16,7 +16,7 @@ public class TraductorSerge_P602{
     int validacionPAL;
 
     do{
-      System.out.println("Escribe la Palabra en Español - ");
+      System.out.println(contador + "Escribe la Palabra en Español - ");
   //    do{
         PEspanol = stdin.readLine();
   //      if (PEspanol.length > 40){
@@ -30,17 +30,17 @@ public class TraductorSerge_P602{
       spanishW[contador] = PEspanol;
       englishW[contador] = PIngles;
 
-      contador ++;
+      ++contador;
 
       System.out.println("Quieres EScribir otra RElacion de palabras E-I\n 1 - PAra si");
       pingVAL = stdin.readLine();
       validacionPAL = Integer.parseInt(pingVAL);
-    }while (validacionARR == 1 && contador <101 && contador > 1);
+    }while (validacionPAL == 1 && contador < 101);
 
   }
   public static void main(String[]args)throws IOException{
     TraductorSerge_P602 Translate = new TraductorSerge_P602();
-//    crearDiccionario();
+    Translate.crearDiccionario();
   }
 
 }
