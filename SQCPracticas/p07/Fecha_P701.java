@@ -17,6 +17,7 @@ public void asignarFecha(){
     this.mes = current_day.get(Calendar.MONTH);
     this.anio = current_day.get(Calendar.YEAR);
 }
+
 public void asignarFecha(int mes_param){
     this.asignarFecha();
     this.mes = mes_param;
@@ -26,6 +27,13 @@ public void asignarFecha(int dia_param, int mes_param, int anio_param){
     this.dia = dia_param;
     this.mes = mes_param;
     this.anio = anio_param;
+}
+public int[] asignarFecha(int[] fecha1){
+    fecha1[0] = this.dia;
+    fecha1[1] = this.mes;
+    fecha1[2] = this.anio;
+
+    return fecha1;
 }
 
 public int[] obtenerFecha(int[] fecha){
@@ -51,9 +59,12 @@ private int readInt() {
   return 0;
 }
 
-private int pedirFECHA(){
+private int[] pedirFECHA(){
     System.out.println("Introducir FEcha");
     int anolec, meslec, dialec, biciesto = 0, flagdia;
+
+    int []retFP = new int[3];
+
     do{
       System.out.println("Año");
       anolec = this.readInt();
@@ -99,7 +110,13 @@ private int pedirFECHA(){
     }while(flagdia != 0);
 
 
-    return 0;
+
+    retFP[0] = dialec;
+    retFP[1] = meslec;
+    retFP[2] = anolec;
+
+//System.out.println(retFP[2]);
+    return retFP;//(dialec, meslec, anolec);
 }
 
 public static void amdFecha(int[] fecha){
@@ -115,11 +132,13 @@ public static void main (String[]args){
 
 
   Fecha_P701 FechaME = new Fecha_P701();
-  FechaME.pedirFECHA();
+  //FechaME.pedirFECHA();
+int[]fecha1 = new int[3];
+int[]fecha = new int[3];
+FechaME.pedirFECHA();
+  //FechaME.asignarFecha(7,10,1985);
 
-  FechaME.asignarFecha(7,10,1985);
-  int[]fecha = new int[3];
-  System.out.println(FechaME.obtenerFecha(fecha));
+// System.out.println(FechaME.obtenerFecha(fecha));
   Fecha_P701.amdFecha(fecha); //formato
 
 }
