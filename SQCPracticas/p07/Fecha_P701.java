@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class P701_try01{
+public class Fecha_P701{
 private  int dia;
 private int mes;
 private  int anio;
@@ -66,6 +66,11 @@ private int pedirFECHA(){
     return 0;
 }
 
+public static void amdFecha(int[] fecha){
+    System.out.println(fecha[0] + "-" + fecha[1] + "-" + fecha[2]);
+
+}
+
 public static void main (String[]args){
 
 //  P701_try01 FechaME = new P701_try01();
@@ -73,13 +78,13 @@ public static void main (String[]args){
 
 
 
-  P701_try01 FechaME = new P701_try01();
+  Fecha_P701 FechaME = new Fecha_P701();
   FechaME.pedirFECHA();
 
   FechaME.asignarFecha(7,10,1985);
   int[]fecha = new int[3];
   System.out.println(FechaME.obtenerFecha(fecha));
-  Fecha.amdFecha(fecha); //formato
+  Fecha_P701.amdFecha(fecha); //formato
 
 }
 }
