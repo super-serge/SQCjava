@@ -53,7 +53,7 @@ private int readInt() {
 
 private int pedirFECHA(){
     System.out.println("Introducir FEcha");
-    int anolec;
+    int anolec, meslec;
     do{
       System.out.println("Año");
       anolec = this.readInt();
@@ -62,12 +62,12 @@ private int pedirFECHA(){
       }
     }while(anolec < 1582 || anolec > 2018);
     do{
-      System.out.println("Año");
+      System.out.println("Mes");
       meslec = this.readInt();
       if(anolec < 1 || meslec > 12){
-        System.out.println("\nEl Año no es Valido, Try Again");
+        System.out.println("\nEl Mes no es Valido, Try Again");
       }
-    }while(meslec < 1582 || meslec > 2018);
+    }while(meslec < 1 || meslec > 12);
 
 
     return 0;
