@@ -53,7 +53,7 @@ private int readInt() {
 
 private int pedirFECHA(){
     System.out.println("Introducir FEcha");
-    int anolec, meslec;
+    int anolec, meslec, dialec, biciesto = 0, flagdia;
     do{
       System.out.println("Año");
       anolec = this.readInt();
@@ -68,6 +68,35 @@ private int pedirFECHA(){
         System.out.println("\nEl Mes no es Valido, Try Again");
       }
     }while(meslec < 1 || meslec > 12);
+    do{
+      flagdia = 0;
+      System.out.println("Dia");
+      dialec = this.readInt();
+      if(meslec == 2 && (anolec % 4) != 0){
+        if(dialec < 1 || dialec > 28){
+          System.out.println("\nEl Dia no es Valido, Try Again");
+          flagdia = 1;
+        }
+      }
+      if(meslec == 2 && (anolec % 4) == 0){
+        if(dialec < 1 || dialec > 29){
+          System.out.println("\nEl Dia no es Valido, Try Again");
+          flagdia = 1;
+        }
+      }
+      if(meslec == 1 || meslec == 3 || meslec == 5 || meslec == 7 || meslec == 8 || meslec == 10 || meslec == 12){
+        if(dialec < 1 || dialec > 31){
+          System.out.println("\nEl Dia no es Valido, Try Again");
+          flagdia = 1;
+        }
+      }
+      if(meslec == 4 || meslec == 6 || meslec == 9 || meslec == 11){
+        if(dialec < 1 || dialec > 30){
+          System.out.println("\nEl Dia no es Valido, Try Again");
+          flagdia = 1;
+        }
+      }
+    }while(flagdia != 0);
 
 
     return 0;
