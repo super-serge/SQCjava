@@ -61,6 +61,13 @@ private int pedirFECHA(){
         System.out.println("\nEl Año no es Valido, Try Again");
       }
     }while(anolec < 1582 || anolec > 2018);
+    do{
+      System.out.println("Año");
+      meslec = this.readInt();
+      if(anolec < 1 || meslec > 12){
+        System.out.println("\nEl Año no es Valido, Try Again");
+      }
+    }while(meslec < 1582 || meslec > 2018);
 
 
     return 0;
