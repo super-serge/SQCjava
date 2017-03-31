@@ -40,12 +40,14 @@ public class TestFecha_P801_2{
       FechaME5.finalize();
       FechaME5 = null;
 
-
-
       if(FechaME5 == null){
         System.out.println("YA no extste!!");
       }
       System.gc();
+
+      //FechaME2.PasarGarbageCollector();
+      //
+
   }
 
 }

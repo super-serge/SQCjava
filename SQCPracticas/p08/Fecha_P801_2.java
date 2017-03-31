@@ -15,11 +15,14 @@ private int flagdia;
 
 public Fecha_P801_2(){
   this.asignarFecha();
-//  Calendar current_day = new GregorianCalendar();
-//  this.dia = current_day.get(Calendar.DAY_OF_MONTH);
-//  this.mes = current_day.get(Calendar.MONTH);
-//  this.anio = current_day.get(Calendar.YEAR);
 }
+
+public Fecha_P801_2(int dia_param, int mes_param, int anio_param){
+    this.dia = dia_param;
+    this.mes = mes_param;
+    this.anio = anio_param;
+}
+
 public Fecha_P801_2(int mes_param){
   this.asignarFecha();
   this.mes = mes_param;
@@ -138,4 +141,15 @@ public void pedirFECHA(){
       System.out.println("Se Borrarara");
       System.gc();
     }
+/*
+    public void finalize(){
+      System.out.println(this.obtenerFecha());
+
+    }
+    NO funcionno investigar
+    */
+//    public void PasarGarbageCollector(){
+//      Runtime Garbage = Runtime.getRuntime();
+//      garbage.gc();
+//    }
 }
