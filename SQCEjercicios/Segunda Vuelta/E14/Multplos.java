@@ -10,14 +10,11 @@ public class Multplos {
         int finalval;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-
         System.out.println("Valores Positivos\n");
 
         do {
             System.out.println("Valor 1");
-
             inicioval = Integer.parseInt(br.readLine());
-
             if (inicioval < 0 ) {
                 System.out.println("Debe ser un Numero Positivo");
             }
@@ -42,9 +39,6 @@ public class Multplos {
           inicioval = aux;
         }
 
-
-
-
         int resultado = 0;
 
         for (int j = inicioval; j < finalval; j++) {
@@ -53,11 +47,7 @@ public class Multplos {
         		resultado = resultado + j;
             System.out.println("\n La suma de " + j + " los Numero Multiplicados es: -> " + resultado);
         	}
-            //resultado = resultado * j;
-
         }
-
 //        System.out.println("\n La suma de los Numero Multiplicados es: -> " + resultado);
-
     }
 }
