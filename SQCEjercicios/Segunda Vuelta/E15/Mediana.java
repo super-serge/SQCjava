@@ -25,9 +25,7 @@ public class Mediana {
         int[] eDIO = new int[y];
 
         for (int j = 0; j < y; ++j) {
-
             int valor = Integer.parseInt(br.readLine());
-
             eDIO[j] = valor;
         }
         int zBYE = eDIO.length / 2;
@@ -42,10 +40,9 @@ public class Mediana {
                 }
             }
         }
- 
+
         for (int k = 0; k < eDIO.length; k++) {
             System.out.println(k + "-> " + eDIO[k]);
-
         }
         System.out.println("La mediana es: -> " + eDIO[zBYE]);
     }
