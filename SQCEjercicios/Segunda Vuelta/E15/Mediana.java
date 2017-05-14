@@ -3,9 +3,7 @@ import java.io.*;
 public class Mediana {
 
     public static void main(String[] args) throws IOException {
-
         int x, y, z;
-        float nz;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         do {

@@ -20,14 +20,14 @@ public class MedianaTuneado {
     }
 
     public int[] pedirConjunto(){
-      this.valdaImpar();
+      this.pedirLongitud();
       int[] eDIO = new int[longitudConjunto];
 
       for (int j = 0; j < eDIO.length; j++) {
           eDIO[j] = this.readInt();
       }
-            this.flagMediana = eDIO.length / 2;
-            return eDIO;
+      this.flagMediana = eDIO.length / 2;
+      return eDIO;
     }
 
     public void setConjunto(int[] arreglo) {
@@ -48,18 +48,20 @@ public class MedianaTuneado {
       }
     }
 
-    public int valdaImpar(){
+    public int pedirLongitud(){
+      int aux;
       do {
           System.out.println("Escribe un Numero Impar->");
-          this.longitudConjunto = this.readInt();
+          aux = this.readInt();
 
-          if (this.longitudConjunto % 2 == 0) {
+          if (aux % 2 == 0) {
               System.out.println("Debe de Ser IMPAR");
           } else {
-              System.out.println("Correcto, Escribe " + this.longitudConjunto + " valores a continuacion\n");
+              System.out.println("Correcto, Escribe " + aux + " valores a continuacion\n");
           }
-      } while (this.longitudConjunto == 0);
-      return this.longitudConjunto;
+      } while (aux % 2 == 0);
+      this.longitudConjunto = aux;
+      return 0;
     }
 
     public int getElemeto(int index){
